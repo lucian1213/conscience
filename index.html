@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>진행용 웹페이지</title>
+    <title>오디오 플레이어</title>
     <style>
         body {
             font-family: 'Arial', sans-serif;
@@ -46,23 +46,24 @@
             width: 100%;
             margin: 10px 0;
         }
+    </style>
 </head>
 <body>
     <div class="container">
         <div class="intro">
-            <h1>양심의 기생 GM 페이지</h1>
-            <p>플레이어 입장 후 하단 BGM을 재생하며 나레이션 읽기.</p>
+            <h1>환영합니다</h1>
+            <p>이 페이지에서는 다양한 오디오를 들으실 수 있습니다. 각 플레이어에서 재생, 일시정지, 반복 재생이 가능합니다.</p>
         </div>
 
         <div class="player-container">
-            <h3 class="player-title">나레이션 읽기 및 시작</h3>
+            <h3 class="player-title">오디오 1</h3>
             <audio controls loop>
-                <source src="bgm/Start.mp3" type="audio/mpeg">
+                <source src="BGM/audio1.mp3" type="audio/mpeg">
                 브라우저가 오디오 재생을 지원하지 않습니다.
             </audio>
         </div>
 
-                <div class="story-text">여러분은 어느 방에서 눈을 떴습니다.
+        <div class="story-text">여러분은 어느 방에서 눈을 떴습니다.
 아무래도 여러분 모두는 '기억'을 잃어버린 것 같습니다.
 그러나 여러분은 두 가지를 확신하고 있습니다.
 하나는 잃어버린 「기억」을 되찾아야 할 이유가
@@ -70,12 +71,11 @@
 동료이며, 결코 배신하지 않는다는 것입니다.
 여러분은 서로 힘을 합쳐 기억을 되찾고
 진실을 알아내기로 결심했습니다.</div>
-        
 
         <div class="player-container">
             <h3 class="player-title">오디오 2</h3>
             <audio controls loop>
-                <source src="/path/to/audio2.mp3" type="audio/mpeg">
+                <source src="BGM/audio2.mp3" type="audio/mpeg">
                 브라우저가 오디오 재생을 지원하지 않습니다.
             </audio>
         </div>
@@ -83,7 +83,7 @@
         <div class="player-container">
             <h3 class="player-title">오디오 3</h3>
             <audio controls loop>
-                <source src="/path/to/audio3.mp3" type="audio/mpeg">
+                <source src="BGM/audio3.mp3" type="audio/mpeg">
                 브라우저가 오디오 재생을 지원하지 않습니다.
             </audio>
         </div>
