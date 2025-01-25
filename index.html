@@ -47,6 +47,21 @@
             margin: 10px 0;
         }
     </style>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const players = document.getElementsByClassName('audio-player');
+            
+            Array.from(players).forEach(player => {
+                player.addEventListener('play', function() {
+                    Array.from(players).forEach(otherPlayer => {
+                        if(otherPlayer !== player) {
+                            otherPlayer.pause();
+                        }
+                    });
+                });
+            });
+        });
+    </script>
 </head>
 <body>
     <div class="container">
@@ -56,8 +71,8 @@
         </div>
 
         <div class="player-container">
-            <h3 class="player-title">나레이션 읽기 및 도입</h3>
-            <audio controls loop>
+            <h3 class="player-title">오디오 1</h3>
+            <audio controls loop class="audio-player">
                 <source src="bgm/Start.mp3" type="audio/mpeg">
                 브라우저가 오디오 재생을 지원하지 않습니다.
             </audio>
@@ -74,7 +89,7 @@
 
         <div class="player-container">
             <h3 class="player-title">오디오 2</h3>
-            <audio controls loop>
+            <audio controls loop class="audio-player">
                 <source src="BGM/audio2.mp3" type="audio/mpeg">
                 브라우저가 오디오 재생을 지원하지 않습니다.
             </audio>
@@ -82,7 +97,7 @@
 
         <div class="player-container">
             <h3 class="player-title">오디오 3</h3>
-            <audio controls loop>
+            <audio controls loop class="audio-player">
                 <source src="BGM/audio3.mp3" type="audio/mpeg">
                 브라우저가 오디오 재생을 지원하지 않습니다.
             </audio>
