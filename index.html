@@ -58,19 +58,21 @@
         }
     </style>
     <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            const players = document.getElementsByClassName('audio-player');
-            
-            Array.from(players).forEach(player => {
-                player.addEventListener('play', function() {
-                    Array.from(players).forEach(otherPlayer => {
-                        if(otherPlayer !== player) {
-                            otherPlayer.pause();
-                        }
-                    });
+document.addEventListener('DOMContentLoaded', function() {
+    const players = document.getElementsByClassName('audio-player');
+    
+    Array.from(players).forEach(player => {
+        player.addEventListener('play', function() {
+            if(!this.classList.contains('independent-player')) {
+                Array.from(players).forEach(otherPlayer => {
+                    if(otherPlayer !== player && !otherPlayer.classList.contains('independent-player')) {
+                        otherPlayer.pause();
+                    }
                 });
-            });
+            }
         });
+    });
+});
     </script>
 </head>
 <body>
@@ -240,9 +242,19 @@ PC1: 밥파/ PC2: 밥파/ PC3: 밥파
         </div>
 <div class="story-text">여러분은 방을 조사해보기로 했습니다. 방 한쪽에 있는
 디스플레이에 다가서자, 갑자기 화면이 켜졌습니다.
-동시에 스피커에서 기계음성이 흘러나오기 시작했습니다.
+동시에 스피커에서 기계음성이 흘러나오기 시작했습니다.</div>
+           <div class="player-container">
+            <h3 class="player-title">기계음성</h3>
+            <audio controls class="audio-player independent-player">
+                <source src="bgm/part 3.mp3" type="audio/mpeg">
+                브라우저가 오디오 재생을 지원하지 않습니다.
+            </audio>
+        </div>
+
+        
+
     
-「안녕하세요. 저는 양심의 기생 프로그램입니다. 이 방
+<div class="story-text">「안녕하세요. 저는 양심의 기생 프로그램입니다. 이 방
 건너편에는 여러분들의 적이 있습니다. 이제부터 여러분들은
 그들에게 벌을 내려야 할지 말지 토론해 주셔야 합니다.
 백신 프로그램이 작동하기 시작…한…것 같…같습니다.
